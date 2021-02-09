@@ -2,7 +2,7 @@ package models
 
 import play.api.libs.json.{Json, Writes}
 
-case class Task (id: Long = 0, description: String, isActive: Boolean = true)
+case class Task(id: Long = 0, description: String, isActive: Boolean = true)
 
 object Task {
 

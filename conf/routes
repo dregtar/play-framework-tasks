@@ -1,27 +1,21 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# https://www.playframework.com/documentation/latest/ScalaRouting
-# ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.ToDoListController.index()
+GET     /assets/*file                controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /                            controllers.ToDoListController.index()
 
 GET     /tasks/list                  controllers.ToDoListController.allTasks(onlyActive: Boolean ?= true)
 
 GET     /tasks/:id                   controllers.ToDoListController.getTask(id: Long)
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+POST    /tasks/add                   controllers.ToDoListController.addTask(description: String)
 
-POST    /tasks/add                  controllers.ToDoListController.addTask(description: String)
+PUT     /tasks/:id                   controllers.ToDoListController.updateTask(id: Long, description: String, isActive: Boolean)
 
-PUT    /tasks/:id                   controllers.ToDoListController.updateTask(id: Long, description: String, isActive: Boolean)
+PUT     /tasks/:id/reset             controllers.ToDoListController.resetStatus(id: Long, isActive: Boolean)
 
-PUT    /tasks/:id/reset                  controllers.ToDoListController.resetStatus(id: Long, isActive: Boolean)
+POST    /tasks/resetAllStatuses      controllers.ToDoListController.resetAllStatuses(isActive: Boolean)
 
-POST    /tasks/resetAllStatuses         controllers.ToDoListController.resetAllStatuses(isActive: Boolean)
+DELETE  /tasks/:id                   controllers.ToDoListController.deleteTask(id: Long)
 
-DELETE    /tasks/:id                    controllers.ToDoListController.deleteTask(id: Long)
-
-POST    /tasks/deleteInactive           controllers.ToDoListController.deleteInactive()
+POST    /tasks/deleteInactive        controllers.ToDoListController.deleteInactive()
 

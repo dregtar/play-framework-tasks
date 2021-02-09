@@ -1,9 +1,12 @@
 package services
 
 import javax.inject.{Inject, Singleton}
+
+import scala.concurrent.Future
+
 import daos.Tasks
 import models.Task
-import scala.concurrent.Future
+
 
 @Singleton
 class ToDoListServices @Inject()(dao: Tasks) {
