@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-*.class
-*.log
-=======
 logs
 target
 .DS_Store
@@ -11,4 +7,3 @@ target
 /.project
 /.settings
 /RUNNING_PID
->>>>>>> be10643 (Initial deployment 2)
