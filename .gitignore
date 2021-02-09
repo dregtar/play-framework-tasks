@@ -1,2 +1,14 @@
+<<<<<<< HEAD
 *.class
 *.log
+=======
+logs
+target
+.DS_Store
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+>>>>>>> be10643 (Initial deployment 2)
